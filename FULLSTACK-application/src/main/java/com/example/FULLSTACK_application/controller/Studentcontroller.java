@@ -20,10 +20,9 @@ public class Studentcontroller {
         return studentService.getStudentsByEnrollmentYear(year);
     }
 
-     to get students by department
-     @GetMapping("/students/department/{department}")
-     public List<Student> getStudentsByDepartment(@PathVariable String department)
-     {
-     return studentService.getStudentsByDepartment(department);
+    // to get students by department
+    @GetMapping("/students/department/{department}")
+    public List<Student> getStudentsByDepartment(@PathVariable String department) {
+        return studentService.getStudentsByDepartment(department);
     }
 }
