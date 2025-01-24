@@ -14,15 +14,16 @@ public class Studentcontroller {
     @Autowired
     private Studentservice studentService;
 
-    // Endpoint to get students by year of enrollment
+    // to get students by year of enrollment
     @GetMapping("/students/year/{year}")
     public List<Student> getStudentsByEnrollmentYear(@PathVariable int year) {
         return studentService.getStudentsByEnrollmentYear(year);
     }
 
     // to get students by department
-    @GetMapping("/students/department/{department}")
-    public List<Student> getStudentsByDepartment(@PathVariable String department) {
-        return studentService.getStudentsByDepartment(department);
-    }
+    // @GetMapping("/students/department/{department}")
+    // public List<Student> getStudentsByDepartment(@PathVariable String department)
+    // {
+    // return studentService.getStudentsByDepartment(department);
+    // }
 }
