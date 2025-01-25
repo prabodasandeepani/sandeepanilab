@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class Studentcontroller {
@@ -21,14 +20,9 @@ public class Studentcontroller {
         return studentService.getStudentsByEnrollmentYear(year);
     }
 
-    // to get students by department
-    @GetMapping("/students/department/{department}")
-    public List<Student> getStudentsByDepartment(@PathVariable String department) {
-        return studentService.getStudentsByDepartment(department);
-    }
-
-    @GetMapping("/students/{id}/department")
-    public Optional<String> getDepartmentByStudentId(@PathVariable Long id) {
-        return studentService.getDepartmentByStudentId(id);
+    // Endpoint to delete students by year of enrollment
+    @DeleteMapping("/year/{year}")
+    public void deleteStudentsByYear(@PathVariable int year) {
+        studentService.deleteStudentsByYearOfEnrollment(year);
     }
 }
