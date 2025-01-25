@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class Studentcontroller {
@@ -24,5 +25,10 @@ public class Studentcontroller {
     @GetMapping("/students/department/{department}")
     public List<Student> getStudentsByDepartment(@PathVariable String department) {
         return studentService.getStudentsByDepartment(department);
+    }
+
+    @GetMapping("/students/{id}/department")
+    public Optional<String> getDepartmentByStudentId(@PathVariable Long id) {
+        return studentService.getDepartmentByStudentId(id);
     }
 }
